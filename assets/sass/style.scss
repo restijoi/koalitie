@@ -1,0 +1,32 @@
+//overrides
+
+
+
+//global
+@import 'global/typography';
+@import 'global/variables';
+@import 'global/mixins';
+@import 'global/functions';
+
+/* import the necessary Bootstrap files */
+// @import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+//overrides
+@import 'overrides/bootstrap';
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+@import 'global/utils';
+
+//components
+@import 'components/layout';
+
+// partials
+@import 'partials/navbar'; 
+	
+// pages
+
+@import 'pages/index';

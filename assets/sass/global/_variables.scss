@@ -1,0 +1,67 @@
+//typography variables
+
+$Display-Ultralight: 'SF-Pro-Display-Ultralight';
+$Display-UltralightItalic: 'SF-Pro-Display-UltralightItalic';
+$Display-Thin: 'SF-Pro-Display-Thin';
+$Display-ThinItalic: 'SF-Pro-Display-ThinItalic';
+$Display-Light: 'SF-Pro-Display-Light';
+$Display-LightItalic: 'SF-Pro-Display-LightItalic';
+$Display-RegularItalic: 'SF-Pro-Display-RegularItalic';
+$Display-Regular: 'SF-Pro-Display-Regular';
+$Display-Semibold: 'SF-Pro-Display-Semibold';
+$Display-SemiboldItalic: 'SF-Pro-Display-SemiboldItalic';
+$Display-Medium: 'SF-Pro-Display-Medium';
+$Display-MediumItalic: 'SF-Pro-Display-MediumItalic';
+$Display-Bold: 'SF-Pro-Display-Bold';
+$Display-BoldItalic: 'SF-Pro-Display-BoldItalic';
+$Display-BlackItalic: 'SF-Pro-Display-BlackItalic';
+$Display-Black: 'SF-Pro-Display-Black';
+$Display-Heavy: 'SF-Pro-Display-Heavy';
+$Display-HeavyItalic: 'SF-Pro-Display-HeavyItalic';
+
+$Text-Light: 'SF-Pro-Text-Light';
+$Text-LightItalic: 'SF-Pro-Text-LightItalic';
+$Text-Regular: 'SF-Pro-Text-Regular';
+$Text-RegularItalic: 'SF-Pro-Text-RegularItalic';
+$Text-Semibold: 'SF-Pro-Text-Semibold';
+$Text-SemiboldItalic: 'SF-Pro-Text-SemiboldItalic';
+$Text-Medium: 'SF-Pro-Text-Medium';
+$Text-MediumItalic: 'SF-Pro-Text-MediumItalic';
+$Text-Bold: 'SF-Pro-Text-Bold';
+$Text-BoldItalic: 'SF-Pro-Text-BoldItalic';
+$Text-Heavy: 'SF-Pro-Text-Heavy';
+$Text-HeavyItalic: 'SF-Pro-Text-HeavyItalic';
+
+//Primary colors
+
+$white: #ffffff;
+$grey: #70797e;
+$primary:#48e5a3;
+$primary-text:#858a93;
+
+// Mood Colors
+
+// $success: #45e0aa;
+// $danger: #e04551;
+// $warning: #ffde52;
+// $info: #4a73fa;
+
+
+//secondary colors
+$dark-blue: #151d3e;
+$charcoal: #3f434b;
+$off-white:#f8f8f8;
+
+
+//font-sizes:
+$basefont: 16;
+$h1: #{36 / $basefont}rem;
+$h2: #{30 / $basefont}rem;
+$h3: #{24 / $basefont}rem;
+$h4: #{20 / $basefont}rem;
+$h5: #{18 / $basefont}rem;
+$h6: #{16 / $basefont}rem;
+$paragraph: #{14 / $basefont}rem;
+$small: #{12 / $basefont}rem;
+
+
