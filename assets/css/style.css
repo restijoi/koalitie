@@ -8793,14 +8793,49 @@ a {
     margin-right: 1.875rem;
     margin-bottom: 0;
     line-height: 1;
-    color: #858a93; }
+    color: #858a93;
+    position: relative; }
+    .main-nav a:before {
+      content: "";
+      width: 0;
+      height: 3px;
+      background: none;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      transition: all cubic-bezier(0.88, 0.05, 0.26, 0.6) 0.3s; }
+      @media (prefers-reduced-motion: reduce) {
+        .main-nav a:before {
+          transition: none; } }
     .main-nav a.active {
       font-family: "SF-Pro-Text-Bold";
       font-size: 2.25rem;
       color: #151d3e; }
+    .main-nav a:hover:before {
+      background-image: linear-gradient(274deg, rgba(21, 162, 250, 0.97), #ed4caf);
+      width: 100%;
+      height: 3px;
+      transition: all cubic-bezier(0.88, 0.05, 0.26, 0.6) 0.3s; }
+      @media (prefers-reduced-motion: reduce) {
+        .main-nav a:hover:before {
+          transition: none; } }
+
+.main-content-wrapper {
+  width: calc(100% - 20rem);
+  margin-left: 20rem;
+  position: relative; }
+  .main-content-wrapper:after {
+    content: "";
+    height: 3.125rem;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
+    position: absolute;
+    bottom: 0; }
 
 .profile-info {
-  max-width: 20rem; }
+  max-width: 20rem;
+  padding-right: 2rem;
+  position: fixed; }
   .profile-info .profile-avatar {
     width: 3.75rem;
     height: 3.75rem;
@@ -8822,17 +8857,7 @@ a {
   .profile-info h3 {
     font-family: "SF-Pro-Text-Semibold";
     color: #151d3e; }
-
-.content-tabs nav {
-  border: none; }
-  .content-tabs nav a {
-    font-size: 0.75rem;
-    font-family: "SF-Pro-Text-Semibold";
-    color: #3f434b;
-    letter-spacing: -0.1px;
-    margin-right: 2.1875rem;
-    padding: 0.4rem 0.5rem;
-    line-height: 1;
+  .profile-info .job-desc {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -8841,54 +8866,92 @@ a {
     -webkit-align-items: center;
     -moz-align-items: center;
     -ms-align-items: center;
-    align-items: center;
-    -webkit-justify-content: center;
-    -moz-justify-content: center;
-    -ms-justify-content: center;
-    justify-content: center;
-    -ms-flex-pack: center; }
-    .content-tabs nav a.active {
-      background: #151d3e;
-      color: #ffffff;
-      border-radius: 10rem; }
+    align-items: center; }
+    .profile-info .job-desc p {
+      background: linear-gradient(274deg, rgba(21, 162, 250, 0.97), #ed4caf);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; }
+    .profile-info .job-desc .separator {
+      background-image: linear-gradient(274deg, rgba(21, 162, 250, 0.97), #ed4caf); }
+
+.content-tabs {
+  position: relative;
+  overflow-y: auto;
+  padding-right: 0.5rem; }
+  .content-tabs nav {
+    border: none;
+    margin-bottom: 2.75rem; }
+    .content-tabs nav a {
+      font-size: 0.875rem;
+      font-family: "SF-Pro-Text-Bold";
+      color: #3f434b;
+      letter-spacing: -0.1px;
+      margin-right: 2.1875rem;
+      line-height: 1;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      align-items: center;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+      justify-content: center;
+      -ms-flex-pack: center;
+      position: relative; }
+      .content-tabs nav a:before {
+        content: "";
+        width: 0;
+        height: 3px;
+        background: none;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        transition: all cubic-bezier(0.88, 0.05, 0.26, 0.6) 0.3s; }
+        @media (prefers-reduced-motion: reduce) {
+          .content-tabs nav a:before {
+            transition: none; } }
+      .content-tabs nav a.active:before {
+        background-image: linear-gradient(274deg, rgba(21, 162, 250, 0.97), #ed4caf);
+        width: 2.5rem;
+        height: 3px;
+        transition: all cubic-bezier(0.88, 0.05, 0.26, 0.6) 0.3s; }
+        @media (prefers-reduced-motion: reduce) {
+          .content-tabs nav a.active:before {
+            transition: none; } }
 
 .thumbnail {
   width: 12.5rem;
-  height: 12.5rem;
-  color: #ffffff;
-  position: relative; }
-  .thumbnail .thumbnail-photo {
-    width: 100%;
-    height: 100%;
-    box-shadow: -5px 10px 30px 0 rgba(0, 0, 0, 0.09);
-    border-radius: 6px;
-    background-size: cover;
-    background-position: center; }
-  .thumbnail .thumbnail-details {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    -moz-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-justify-content: flex-end;
-    -moz-justify-content: flex-end;
-    -ms-justify-content: flex-end;
-    justify-content: flex-end;
-    -ms-flex-pack: flex-end;
-    padding: 0.9375rem; }
-    .thumbnail .thumbnail-details h4 {
-      font-family: "SF-Pro-Text-Bold";
-      margin-bottom: 0.2rem; }
-    .thumbnail .thumbnail-details p {
-      margin-bottom: 0; }
+  color: #151d3e;
+  cursor: pointer;
+  margin-bottom: 2rem; }
+  .thumbnail img {
+    border-radius: 0.625rem;
+    box-shadow: -5px 2px 10px 0 rgba(0, 0, 0, 0.09);
+    margin-bottom: 0.75rem; }
+  .thumbnail h5 {
+    font-family: "SF-Pro-Display-Bold";
+    letter-spacing: -0.2px;
+    transition: all ease 0.3s; }
+    @media (prefers-reduced-motion: reduce) {
+      .thumbnail h5 {
+        transition: none; } }
+  .thumbnail p {
+    line-height: 1.29;
+    letter-spacing: -0.2px;
+    margin-bottom: 0.5rem;
+    opacity: 0.8; }
+  .thumbnail:hover h5 {
+    background: linear-gradient(300deg, rgba(21, 162, 250, 0.97), #ed4caf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all ease 0.3s; }
+    @media (prefers-reduced-motion: reduce) {
+      .thumbnail:hover h5 {
+        transition: none; } }
 
 /*# sourceMappingURL=style.css.map */

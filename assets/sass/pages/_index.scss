@@ -1,6 +1,7 @@
 .profile-info {
     max-width: torem(320);
-
+    padding-right: 2rem;
+    position: fixed;
     .profile-avatar {
         width: torem(60);
         height: torem(60);
@@ -30,70 +31,94 @@
         font-family: $Text-Semibold;
         color: $dark-blue;
     }
-}
-
-.content-tabs {
-    nav {
-        border: none;
-
-        a {
-            font-size: $small;
-            font-family: $Text-Semibold;
-            color: $charcoal;
-            letter-spacing: -0.1px;
-            margin-right: torem(35);
-            padding: 0.4rem 0.5rem;
-            line-height: 1;
-            @include justify-align-center();
-
-            &.active {
-                background: $dark-blue;
-                color: $white;
-                border-radius: 10rem;
-
-            }
+    .job-desc{
+        @include flex-align-center();
+        p{
+             background: linear-gradient(274deg, rgba(21, 162, 250, 0.97), #ed4caf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .separator{
+             background-image: linear-gradient(274deg, rgba(21, 162, 250, 0.97), #ed4caf);
         }
     }
 }
+
+.content-tabs {
+    position: relative;
+    
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    nav {
+        border: none;
+        margin-bottom: torem(44);
+
+        a {
+            font-size: $paragraph;
+            font-family: $Text-Bold;
+            color: $charcoal;
+            letter-spacing: -0.1px;
+            margin-right: torem(35);
+            line-height: 1;
+            @include justify-align-center();
+            position: relative;
+
+            &:before {
+                content: "";
+                width: 0;
+                 height: 3px;
+                background: none;
+                position: absolute;
+                bottom: -10px;
+                left: 0;
+                @include transition(all cubic-bezier(0.88, 0.05, 0.26, 0.6) 0.3s);
+            }
+
+            &.active {
+                &:before {
+                    background-image: linear-gradient(274deg, rgba(21, 162, 250, 0.97), #ed4caf);
+                    width: 2.5rem;
+                    height: 3px;
+                    @include transition(all cubic-bezier(0.88, 0.05, 0.26, 0.6) 0.3s);
+                }
+            }
+        }
+    }
+   
+}
+
 
 
 .thumbnail {
     width: torem(200);
-    height: torem(200);
-    color: $white;
-    position: relative;
-    .thumbnail-photo {
-        width: 100%;
-        height: 100%;
-        box-shadow: -5px 10px 30px 0 rgba(0, 0, 0, 0.09);
-        border-radius: 6px;
-        background: {
-            size: cover;
-            position: center;
-        }
+    color: $dark-blue;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    img {
+        border-radius: torem(10);
+        box-shadow: -5px 2px 10px 0 rgba(0, 0, 0, 0.09);
+        margin-bottom: 0.75rem;
     }
 
-    .thumbnail-details {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        @include flexbox();
-        @include flex-direction(column);
-        @include justify-content(flex-end);
-
-        padding: torem(15);
-
-        h4 {
-            font-family: $Text-Bold;
-            margin-bottom: 0.2rem;
-        }
-        p{
-        	margin-bottom: 0;
-        }
+    h5 {
+        font-family: $Display-Bold;
+        letter-spacing: -0.2px;
+         @include transition(all ease 0.3s);
     }
 
+    p {
+        line-height: 1.29;
+        letter-spacing: -0.2px;
+        margin-bottom: 0.5rem;
+        opacity: 0.8;
+    }
 
-
+    &:hover {
+        h5 {
+            background: linear-gradient(300deg, rgba(21, 162, 250, 0.97), #ed4caf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+             @include transition(all ease 0.3s);
+        }
+    }
 }
