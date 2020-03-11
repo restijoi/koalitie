@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-blogpage{% endblock %}
+
+{% block content %}
+<div class="content-tabs">
+  <nav id="contentNav" class="nav nav-tabs" role="tablist">
+    <a class="active" id="ClProjects" data-toggle="tab" href="#projects" role="tab" aria-controls="projects" aria-selected="true">Downloadable Templates 
+    </a>
+
+    <a id="PsIllustrations" data-toggle="tab" href="#illustrations" role="tab" aria-controls="illustrations" aria-selected="false">Illustrations</a>
+
+    <a id="DlTemplates" data-toggle="tab" href="#templates" role="tab" aria-controls="templates" aria-selected="false">Client Project</a>
+  </nav>
+  <div class="content-wrapper tab-content" id="contentTab">
+    <div class="tab-pane fade show active" id="projects" role="tabpanel" aria-labelledby="ClProjects">
+      <div class="row justify-content-between m-0">
+        {% for work in page.get_children %}
+        <div class="thumbnail">
+          <img src="assets/images/ricardo-frantz-1367825-unsplash.jpg" data-rjs="3">
+          <h5>{{ work.title }}</h5>
+          {{ work.specific.description | richtext}}
+          <p>{{ work.specific.date | date:"Y"}}</p>
+        </div>
+        {% endfor %}      
+      </div>
+    </div>   
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,105 @@
+.main-container {
+    width: torem(1200);
+    padding: torem(50) 1rem;
+    @include flexbox();
+}
+
+
+.separator {
+    width: 4px;
+    height: 4px;
+    background: $dark-blue;
+    display: block;
+    border-radius: 50%;
+    margin: 0 0.5rem;
+}
+
+.subtitle {
+    font-family: $Text-Medium;
+    color: $charcoal;
+}
+
+.section-label {
+    font-family: $Text-Semibold;
+    color: $charcoal;
+    display: block;
+}
+
+//badges
+
+.badge {
+    font-family: $Text-Bold;
+    font-size: $small;
+    padding: 0.3rem 0.75rem;
+    margin: 0.2rem 0.4rem 0.2rem 0;
+
+}
+
+@each $color,
+$value in $theme-colors {
+    .badge-ghost-#{$color} {
+        background-color: $off-white;
+        color: $value;
+    }
+}
+
+.avatar {
+    &-xs {
+        width: torem(30);
+        height: torem(30);
+    }
+}
+
+.main-nav {
+    @include align-items(baseline);
+    margin-bottom: torem(60);
+    padding: 0;
+
+    a {
+        font-size: $h5;
+        font-family: $Text-Light;
+        margin-right: torem(30);
+        margin-bottom: 0;
+        line-height: 1;
+        color: $primary-text;
+        position: relative;
+        &:before {
+            content: "";
+            width: 0;
+             height: 3px;
+            background: none;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+             @include transition(all cubic-bezier(0.88, 0.05, 0.26, 0.6) 0.3s);
+        }
+
+        &.active {
+            font-family: $Text-Bold;
+            font-size: $h1;
+            color: $dark-blue;
+        }
+
+        &:hover {
+            &:before {
+                background-image: linear-gradient(274deg, rgba(21, 162, 250, 0.97), #ed4caf);
+                width: 100%;
+                height: 3px;
+                @include transition(all cubic-bezier(0.88, 0.05, 0.26, 0.6) 0.3s);
+            }
+        }
+    }
+}
+.main-content-wrapper{
+	width: calc(100% - 20rem);
+	margin-left: 20rem;
+	position: relative;
+	 &:after{
+        content: "";
+        height: torem(50);
+        width: 100%;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+        position: absolute;
+        bottom:0;
+    }
+}

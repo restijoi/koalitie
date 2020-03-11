@@ -1,6 +1,8 @@
 # Don't track any of the content of these folders
 
 *node_modules/
+*.pyc
+*.sqlite3
 *.DS_Store/
 assets/.sass-cache/
 *css.map
