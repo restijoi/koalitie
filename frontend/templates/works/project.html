@@ -1,0 +1,68 @@
+
+{% load wagtailcore_tags %}
+
+{% load static wagtailuserbar %}
+
+{% block content %}
+<!-- Modal -->
+<div class="modal modal-custom fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-custom-dialog" role="document">
+    <div class="modal-content modal-custom-content">
+       <div class="project-container">
+         <aside class="project-info">
+           <h1 class="mt-4">Project title</h1>
+           <div class="section my-5">
+        		<span class="badge badge-pill badge-ghost-dark">UI/UX Design</span>
+        		<span class="badge badge-pill badge-ghost-dark">User Research</span>
+        		<span class="badge badge-pill badge-ghost-dark ">Wireframes</span>
+        		<span class="badge badge-pill">Mock ups</span>
+        		<span class="badge badge-pill badge-ghost-dark">Prototypes</span>
+        		<span class="badge badge-pill badge-ghost-dark">HTML</span>
+        		<span class="badge badge-pill badge-ghost-dark">CSS</span>
+        		<span class="badge badge-pill badge-ghost-dark">Javascript</span>
+        	</div>
+        	<div class="section py-2">
+        		<label class="section-label mb-2">Project brief</label>
+        		<p>
+        			A Designer-Developer in one, I have been working for mobile and web development projects that promotes test driven architecture to produce high quality human-centred experiences for the last four (4) years.
+        		</p>
+        	</div>
+         </aside>
+         <section class="main-content-wrapper p-5">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="project-gallery">
+            <div class="slider">
+              <div class="slider_track" data-glide-el="track">
+                <ul class="slider__slides">
+                  <img src="{% static 'images/gallery.png' %}" alt="">
+                  <img src="{% static 'images/gallery.png' %}" alt="">
+                  <img src="{% static 'images/gallery.png' %}" alt="">
+                </ul>
+              </div>
+              <div class="glide__arrows" data-glide-el="controls">
+                <button class="slider__arrow slider__arrow--left" data-glide-dir="<"><</button>
+                <button class="slider__arrow slider__arrow--right" data-glide-dir=">">></button>
+              </div>
+              <div class="slider__lists" data-glide-el="controls[nav]">
+                <div class="item" data-glide-dir="=0" style="background-image: url({% static 'images/gallery.png' %});"></div>
+                
+                <div class="item" data-glide-dir="=1" style="background-image: url({% static 'images/gallery.png' %});"></div>
+                <div class="item" data-glide-dir="=2" style="background-image: url({% static 'images/gallery.png' %});"></div>
+              </div>
+            </div>
+          </div>
+         </section>
+       </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+<script src="{% static 'node_modules/@glidejs/glide/dist/glide.min.js' %}"></script>
+
+<script>
+  new Glide('.slider').mount(
+  )
+</script>

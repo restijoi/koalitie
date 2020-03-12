@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% load static wagtailuserbar %}
+
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block body_class %}template-blogpage{% endblock %}
+
+{% block content %}
+<div class="content-tabs">
+  <nav id="contentNav" class="nav nav-tabs" role="tablist">
+    <a class="active" id="DlTemplates" data-toggle="tab" href="#templates" role="tab" aria-controls="templates" aria-selected="true">Downloadable Templates 
+    </a>
+
+    <a id="PsIllustrations" data-toggle="tab" href="#illustrations" role="tab" aria-controls="illustrations" aria-selected="false">Illustrations</a>
+
+    <a id="ClProjects" data-toggle="tab" href="#projects" role="tab" aria-controls="projects" aria-selected="false">Clients Project</a>
+  </nav>
+  <div class="content-wrapper tab-content" id="contentTab">
+    <div class="tab-pane fade show active" id="templates" role="tabpanel" aria-labelledby="DlTemplates">
+      <div class="row justify-content-between m-0">
+        {% for work in works %}
+        {% if work.specific.category == 'dt' %}
+        <div class="thumbnail" data-toggle="modal" data-target="#staticBackdrop">
+          {% with work.specific.thumbnail_img as thumbnail_img %}
+            {% if thumbnail_img %}
+              {% image thumbnail_img min-200x236 %}
+            {% else %}
+              <img src="{% static 'images/ricardo-frantz-1367825-unsplash.jpg' %}" data-rjs="3">
+            {% endif %}
+          {% endwith %}
+          <h5>{{ work.title }}</h5>
+          <p>{{ work.specific.description | truncatechars:100 }}</p>
+          <p>{{ work.specific.date | date:"Y"}}</p>
+        </div>
+        {% endif %}
+        {% endfor %}      
+      </div>
+    </div>
+    <div class="tab-pane fade" id="illustrations" role="tabpanel" aria-labelledby="PsIllustrations">
+      <div class="row justify-content-between m-0">
+        {% for work in works %}
+        {% if work.specific.category == 'il' %}
+        <div class="thumbnail" data-toggle="modal" data-target="#staticBackdrop">
+          {% with work.specific.thumbnail_img as thumbnail_img %}
+            {% if thumbnail_img %}
+              {% image thumbnail_img min-200x236 %}
+            {% else %}
+              <img src="{% static 'images/ricardo-frantz-1367825-unsplash.jpg' %}" data-rjs="3">
+            {% endif %}
+          {% endwith %}
+          <h5>{{ work.title }}</h5>
+          <p>{{ work.specific.description | truncatechars:100 }}</p>
+          <p>{{ work.specific.date | date:"Y"}}</p>
+        </div>
+        {% endif %}
+        {% endfor %}      
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="projects" role="tabpanel" aria-labelledby="ClProjects">
+      <div class="row justify-content-between m-0">
+        {% for work in works %}
+        {% if work.specific.category == 'cp' %}
+        <div class="thumbnail" data-toggle="modal" data-target="#staticBackdrop">
+          {% with work.specific.thumbnail_img as thumbnail_img %}
+            {% if thumbnail_img %}
+              {% image thumbnail_img min-200x236 %}
+            {% else %}
+              <img src="{% static 'images/ricardo-frantz-1367825-unsplash.jpg' %}" data-rjs="3">
+            {% endif %}
+          {% endwith %}
+          <h5>{{ work.title }}</h5>
+          <p>{{ work.specific.description | truncatechars:100 }}</p>
+          <p>{{ work.specific.date | date:"Y"}}</p>
+        </div>
+        {% endif %}
+        {% endfor %}      
+      </div>
+    </div>
+  </div>
+</div>
+{% include 'works/project.html' %}
+{% endblock %}

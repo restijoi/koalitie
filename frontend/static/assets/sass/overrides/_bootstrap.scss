@@ -10,11 +10,13 @@ $theme-colors: (
   "mango": #ff9f2f,
   "blue": #1088ff,
   "marigold": #fccb00,
-  "pink": #f85ebd
+  "pink": #f85ebd,
 );
 
 //disabling default bootstrap box shadows 
 
 $enable-shadows: false;
+
+$modal-backdrop-bg: #ffffffc9;
 
 

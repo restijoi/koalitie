@@ -1,0 +1,13 @@
+.modal-custom{
+
+  &-dialog {
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+  &-content {
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent !important;
+    border: 0;
+  }
+}

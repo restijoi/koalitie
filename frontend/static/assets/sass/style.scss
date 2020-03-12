@@ -14,6 +14,10 @@
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
 
+
+@import "../node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "../node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
 //overrides
 @import 'overrides/bootstrap';
 
@@ -23,6 +27,8 @@
 
 //components
 @import 'components/layout';
+@import 'components/modal';
+
 
 // partials
 @import 'partials/navbar'; 
@@ -30,3 +36,4 @@
 // pages
 
 @import 'pages/index';
+@import 'pages/works';

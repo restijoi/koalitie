@@ -7,10 +7,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- PLUG INS -->
-    <link rel="stylesheet" type="text/css" href="assets/node_modules/swiper/dist/css/swiper.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/node_modules/animate.css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/node_modules/ionicons/css/ionicons.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/node_modules/bootstrap/dist/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'node_modules/swiper/dist/css/swiper.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'node_modules/animate.css/animate.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'node_modules/ionicons/css/ionicons.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'node_modules/bootstrap/dist/css/bootstrap-reboot.min.css' %}">
     <!-- PLUG INS -->
     <title></title>
 
@@ -73,22 +73,22 @@
         </aside>
         <section class="main-content-wrapper">
         	<nav class="main-nav">
-        		<a href="" class="active">Works</a>
-        		<a href="" class="">Blog</a>
-        		<a href="" class="">Tutorials</a>
-        		<a href="" class="">About</a>
+        		<a href="" class="{% if page.title == 'works'%} active {% endif %}">Works</a>
+        		<a href="" class="{% if page.title == 'blogs'%} active {% endif %}">Blog</a>
+        		<a href="" class="{% if page.title == 'tutorials'%} active {% endif %}">Tutorials</a>
+        		<a href="" class="{% if page.title == 'about'%} active {% endif %}">About</a>
             </nav>
             {% block content %}{% endblock %}
         </section>
     </main>
     <footer>
     </footer>
-    <script type="text/javascript" src="assets/node_modules/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/node_modules/popper.js/dist/umd/popper.min.js"></script>
-    <script type="text/javascript" src="assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/node_modules/swiper/js/swiper.min.js"></script>
-    <script type="text/javascript" src="assets/node_modules/retinajs/dist/retina.js"></script>
-    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="{% static 'node_modules/jquery/dist/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'node_modules/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'node_modules/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'node_modules/swiper/js/swiper.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'node_modules/retinajs/dist/retina.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>
