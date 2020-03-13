@@ -1,9 +1,81 @@
 {% extends "base.html" %}
 
 {% load wagtailcore_tags %}
+{% load static wagtailuserbar %}
 
-{% block body_class %}template-blogpage{% endblock %}
-
-{% block content %}
-
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'node_modules/swiper/dist/css/swiper.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'node_modules/animate.css/animate.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'node_modules/ionicons/css/ionicons.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'node_modules/bootstrap/dist/css/bootstrap-reboot.min.css' %}">
 {% endblock %}
+{% block extra_js %}
+<script type="text/javascript" src="{% static 'node_modules/jquery/dist/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'node_modules/popper.js/dist/umd/popper.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'node_modules/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'node_modules/swiper/dist/js/swiper.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'node_modules/retinajs/dist/retina.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+{% block js %}{% endblock %}
+{% endblock %}
+
+{% block main %}
+<main class="main-container container d-flex">
+<aside class="profile-info">
+  <div class="profile-avatar" style="background-image: url({% static 'images/restie-antiquin.png' %})" data-rjs="3"></div>
+  <h3 class="mb-0">Restie Antiquin</h3>
+  <div class="job-desc">
+    <p class="subtitle mb-0">UI/UX Design</p>
+    <span class="separator"></span>
+    <p class="subtitle mb-0">Front-end Developer</p>
+  </div>
+  <p>Philippines  (GMT+8)</p>
+  <div class="section py-2">
+    <label class="section-label mb-2">Bio</label>
+    <p>
+      Passionate in solving problems through intuitive interfaces that users understand.
+    </p>
+  </div>
+  
+  <div class="section py-2">
+    <label class="section-label mb-2">Skills & Expertise</label>
+    <span class="badge badge-pill badge-light">UI/UX Design</span>
+    <span class="badge badge-pill badge-light">User Research</span>
+    <span class="badge badge-pill badge-light ">Wireframes</span>
+    <span class="badge badge-pill">Mock ups</span>
+    <span class="badge badge-pill badge-light">Prototypes</span>
+    <span class="badge badge-pill badge-light">HTML</span>
+    <span class="badge badge-pill badge-light">CSS</span>
+    <span class="badge badge-pill badge-light ">Javascript</span>
+  </div>
+  <div class="section py-2">
+    <label class="section-label mb-2">Work & Experiences</label>
+    <p>
+      A Designer-Developer in one, I have been working for mobile and web development projects that promotes test driven architecture to produce high quality human-centred experiences for the last four (4) years.
+    </p>
+  </div>
+
+  <div class="section py-2 swiper-container" id="statement">
+    <div>
+      <label class="section-label mb-2">Client statement</label>
+      <div class="swiper-pagination"></div>
+    </div>
+    <div class="">
+      <img src="{% static 'images/img-1.jpg' %}" data-rjs="3" class="img-rounded">
+    </div>
+  </div>
+  
+</aside>
+<section class="main-content-wrapper">
+  <nav class="main-nav">
+    <a href="" class="{% if page.title == 'works'%} active {% endif %}">Works</a>
+    <a href="" class="{% if page.title == 'blogs'%} active {% endif %}">Blog</a>
+    <a href="" class="{% if page.title == 'tutorials'%} active {% endif %}">Tutorials</a>
+    <a href="" class="{% if page.title == 'about'%} active {% endif %}">About</a>
+    </nav>
+    {% block content %}{% endblock %}
+</section>
+</main>
+{% endblock %}
+

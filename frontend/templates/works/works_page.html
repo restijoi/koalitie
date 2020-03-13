@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "home/home_page.html" %}
 
 {% load static wagtailuserbar %}
 
@@ -22,12 +22,15 @@
       <div class="row justify-content-between m-0">
         {% for work in works %}
         {% if work.specific.category == 'dt' %}
-        <div class="thumbnail" data-toggle="modal" data-target="#staticBackdrop">
+        <div class="thumbnail" data-href="{%pageurl work%}">
           {% with work.specific.thumbnail_img as thumbnail_img %}
             {% if thumbnail_img %}
-              {% image thumbnail_img min-200x236 %}
+              {% image thumbnail_img min-200x236 as image %}
+                <div class="img" style="background-image: url({{image.url}});"></div>
             {% else %}
-              <img src="{% static 'images/ricardo-frantz-1367825-unsplash.jpg' %}" data-rjs="3">
+              <div class="img">
+                <img src="{% static 'images/ricardo-frantz-1367825-unsplash.jpg' %}" data-rjs="3">
+              </div>
             {% endif %}
           {% endwith %}
           <h5>{{ work.title }}</h5>
@@ -42,7 +45,7 @@
       <div class="row justify-content-between m-0">
         {% for work in works %}
         {% if work.specific.category == 'il' %}
-        <div class="thumbnail" data-toggle="modal" data-target="#staticBackdrop">
+        <div class="thumbnail" data-href="{%pageurl work%}">
           {% with work.specific.thumbnail_img as thumbnail_img %}
             {% if thumbnail_img %}
               {% image thumbnail_img min-200x236 %}
@@ -63,7 +66,7 @@
       <div class="row justify-content-between m-0">
         {% for work in works %}
         {% if work.specific.category == 'cp' %}
-        <div class="thumbnail" data-toggle="modal" data-target="#staticBackdrop">
+        <div class="thumbnail" data-href="{%pageurl work%}">
           {% with work.specific.thumbnail_img as thumbnail_img %}
             {% if thumbnail_img %}
               {% image thumbnail_img min-200x236 %}
@@ -81,5 +84,24 @@
     </div>
   </div>
 </div>
-{% include 'works/project.html' %}
+<div class="modal modal-custom fade" id="projectsModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-custom-dialog" role="document">
+    <div class="modal-content modal-custom-content">
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+  $(document).ready(function(){
+    $('.thumbnail').on('click',function(){
+        var dataURL = $(this).attr('data-href');
+        console.log(dataURL);
+        $('.modal-content').load(dataURL,function(){
+            $('#projectsModal').modal({show:true, backdrop: false});
+        });
+    }); 
+  });
+</script>
 {% endblock %}

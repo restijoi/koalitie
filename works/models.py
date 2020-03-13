@@ -33,6 +33,8 @@ class WorksPageTag(TaggedItemBase):
     )
 
 class WorkPage(Page):
+    template = 'works/project.html'
+
     catergories = [
         ('dt', 'Downloadable Templates'),
         ('il', 'Illustrations'),

@@ -1,6 +1,13 @@
 .project {
+  &-content-wrapper {
+    width: calc(100% - 20rem);
+    height: 100vh;
+    background-color: #ffffff99;
+    margin-left: 20rem;
+    position: relative;
+  }
   &-info {
-    max-width: torem(320);
+    width: torem(320);
     background-color: #fafaff;
     height: 100vh;
     padding: 4rem 2rem 0 4rem;
@@ -18,7 +25,7 @@
 
   &-gallery {
     width: 85%;
-    margin-top: 8rem;
+    margin-top: 4rem;
     margin-left: auto;
     margin-right: auto;
     .slider {
@@ -27,13 +34,14 @@
       &_track {
         width: 100%;
         border: 5px solid $primary-text; 
+        background-color: white;
         height: 550px;
         overflow: hidden;
       }
 
       &__slides {
         display: flex;
-        width: 100% !important;
+        width: auto !important;
         height: 100%;
         padding: 0;
       }
@@ -42,25 +50,18 @@
         position: absolute;
         display: block;
         top: 50%;
-        z-index: 2;
         text-transform: uppercase;
         padding: 9px 12px;
         background-color: transparent;
         border: 2px solid rgba(255, 255, 255, 0.5);
-        border-radius: 4px;
-        box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
-        text-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
         opacity: 1;
         cursor: pointer;
-        transition: opacity 150ms ease, border 300ms ease-in-out;
-        transform: translateY(-50%);
-        line-height: 1;
 
         &--right {
-          right: 2em;
+          right: 5em;
         }
         &--left {
-          left: 2em;
+          left: 5em;
         }
       }
 
@@ -76,10 +77,50 @@
           background-size: cover;
         }
       }
-      img {
-        margin: 0 !important;
-        width: 100% !important;
+      .image {
+        width: 101% !important;
         height: auto;
+        background-size: cover;
+      }
+    }
+  }
+}
+
+.enlarge-img{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  background-color: #000000d4;
+  top: 0;
+  left: 0;
+  display: none;
+
+  .enSlider {
+
+    &_track {
+      overflow-x: hidden;
+      img {
+        width: 100% ;
+        height: auto;
+        background-size: cover;
+      }
+    }
+    &__slides {
+      display: flex;
+      padding: 0;
+    }
+    
+    &__lists {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: flex-end;
+
+      .item {
+        width: 115px;
+        height: 70px;
+        margin: 0 10px 0 10px;
+        border: 3px solid $off-white;
+        background-size: cover;
       }
     }
   }

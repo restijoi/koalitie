@@ -6,3 +6,4 @@
 *.DS_Store/
 assets/.sass-cache/
 *css.map
+*media/

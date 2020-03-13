@@ -99,10 +99,12 @@
     color: $dark-blue;
     cursor: pointer;
     margin-bottom: 2rem;
-    img {
+    .img {
         border-radius: torem(10);
         box-shadow: -5px 2px 10px 0 rgba(0, 0, 0, 0.09);
         margin-bottom: 0.75rem;
+        width: 200px;
+        height: 236px;
     }
 
     h5 {
