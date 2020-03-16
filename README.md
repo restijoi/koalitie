@@ -15,3 +15,12 @@ Frontend
 
 1. Go to `frontend/static/assets` directory
 2. Run `npm install`
+
+
+# Setup pages in admin
+
+1. after creating superuser, got to `localhost:8000/admin` and login
+2. create a page for works, blogs, tutorial, about, and contacts. The pages should be a child of the home page. 
+3. On creating the pages, you are asked to choose the type of page. Choose the page type with `index` name on it . Ex. `works index page`, `blogs index page`, etc. 
+
+
