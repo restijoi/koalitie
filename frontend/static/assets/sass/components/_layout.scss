@@ -81,6 +81,8 @@ $value in $theme-colors {
         }
 
         &:hover {
+            text-decoration: none !important;
+            color: $primary-text;
             &:before {
                 background-image: linear-gradient(274deg, rgba(21, 162, 250, 0.97), #ed4caf);
                 width: 100%;

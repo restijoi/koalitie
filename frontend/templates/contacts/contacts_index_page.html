@@ -1,0 +1,25 @@
+{% extends "home/home_page.html" %}
+
+{% load static wagtailuserbar %}
+
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'node_modules/@fortawesome/fontawesome-free/css/all.min.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="contact my-5 py-5">
+  <h1 class="contact-title pt-5">Do you have<br>something in mind?</h1>
+  <p class="contact-subtitle">Is it for a project or General Inquiry?<br> Let me know how i can help you out.<br> you can send your messages at</p>
+  <a href="mailto:resty.antiquin@gmail.com" class="contact-button">resty.antiquin@gmail.com</a>
+  <div class="contact-links">
+    <span class="fab fa-facebook-f"></span>
+    <span class="fab fa-linkedin-in"></span>
+    <span class="fab fa-dribbble"></span>
+    <span class="fab fa-behance"></span>
+  </div>
+</div>
+{% endblock %}
+

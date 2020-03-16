@@ -48,9 +48,12 @@
         <div class="thumbnail" data-href="{%pageurl work%}">
           {% with work.specific.thumbnail_img as thumbnail_img %}
             {% if thumbnail_img %}
-              {% image thumbnail_img min-200x236 %}
+              {% image thumbnail_img min-200x236 as image %}
+                <div class="img" style="background-image: url({{image.url}});"></div>
             {% else %}
-              <img src="{% static 'images/ricardo-frantz-1367825-unsplash.jpg' %}" data-rjs="3">
+              <div class="img">
+                <img src="{% static 'images/ricardo-frantz-1367825-unsplash.jpg' %}" data-rjs="3">
+              </div>
             {% endif %}
           {% endwith %}
           <h5>{{ work.title }}</h5>
@@ -69,9 +72,12 @@
         <div class="thumbnail" data-href="{%pageurl work%}">
           {% with work.specific.thumbnail_img as thumbnail_img %}
             {% if thumbnail_img %}
-              {% image thumbnail_img min-200x236 %}
+              {% image thumbnail_img min-200x236 as image %}
+                <div class="img" style="background-image: url({{image.url}});"></div>
             {% else %}
-              <img src="{% static 'images/ricardo-frantz-1367825-unsplash.jpg' %}" data-rjs="3">
+              <div class="img">
+                <img src="{% static 'images/ricardo-frantz-1367825-unsplash.jpg' %}" data-rjs="3">
+              </div>
             {% endif %}
           {% endwith %}
           <h5>{{ work.title }}</h5>

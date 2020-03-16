@@ -1,0 +1,36 @@
+.contact {
+  &-title {
+    font-family: "caros-bold";
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.23;
+  }
+  &-subtitle {
+    font-family: "caros-regular";
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: -0.2px;
+    color: $primary-text;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  &-button {
+    font-family: "caros-regular";
+    background-color: black;
+    color: white;
+    padding: 14px 27px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.36;
+  }
+  &-links {
+    margin: 35px 0;
+    
+    span {
+      color: $primary-text;
+      margin-right: 30px;
+    }
+  }
+}

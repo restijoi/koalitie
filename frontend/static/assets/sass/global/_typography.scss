@@ -236,3 +236,19 @@
   -webkit-font-smoothing: antialiased;
   moz-osx-font-smoothing: grayscale
 }
+
+@font-face {
+  font-family: 'caros-regular';
+  src: url(../fonts/caros-cufonfonts/Caros.otf);
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  moz-osx-font-smoothing: grayscale
+}
+
+@font-face {
+  font-family: 'caros-bold';
+  src: url(../fonts/caros-cufonfonts/Caros-Bold.otf);
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  moz-osx-font-smoothing: grayscale
+}

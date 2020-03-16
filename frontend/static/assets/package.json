@@ -9,6 +9,7 @@
   "author": "Restie Antiquin",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.12.1",
     "@glidejs/glide": "^3.4.1",
     "animate.css": "^3.7.0",
     "bootstrap": "^4.3.1",

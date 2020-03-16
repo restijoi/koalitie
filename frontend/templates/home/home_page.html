@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'node_modules/animate.css/animate.min.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'node_modules/ionicons/css/ionicons.min.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'node_modules/bootstrap/dist/css/bootstrap-reboot.min.css' %}">
+{% block css %}{% endblock %}
 {% endblock %}
 {% block extra_js %}
 <script type="text/javascript" src="{% static 'node_modules/jquery/dist/jquery.min.js' %}"></script>
@@ -69,12 +70,20 @@
 </aside>
 <section class="main-content-wrapper">
   <nav class="main-nav">
-    <a href="" class="{% if page.title == 'works'%} active {% endif %}">Works</a>
-    <a href="" class="{% if page.title == 'blogs'%} active {% endif %}">Blog</a>
-    <a href="" class="{% if page.title == 'tutorials'%} active {% endif %}">Tutorials</a>
-    <a href="" class="{% if page.title == 'about'%} active {% endif %}">About</a>
-    </nav>
-    {% block content %}{% endblock %}
+    <a href="/works" class="{% if page.title == 'works'%} active {% endif %}">Works</a>
+    <a href="/blogs" class="{% if page.title == 'blogs'%} active {% endif %}">Blog</a>
+    <a href="/tutorials" class="{% if page.title == 'tutorials'%} active {% endif %}">Tutorials</a>
+    <a href="/about" class="{% if page.title == 'about'%} active {% endif %}">About</a>
+
+    <a href="/contacts">
+      <div class="contact-btn text-center">
+        <h5><span class="ion-android-mail mr-2"></span>Got a project in mind?</h5>
+        <p>Typically responds in 2-3 days</p>
+      </div>
+    </a>
+  </nav>
+  
+  {% block content %}{% endblock %}
 </section>
 </main>
 {% endblock %}
