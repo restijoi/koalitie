@@ -1,12 +1,14 @@
 $(document).ready(function() {
-    var statement = new Swiper('#statement', {
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'fraction',
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
+    let statement = new Glide('.statement');
+    let elSlideWrapper = $('.glide-wrapper');
+    let elPaginate = $('.glide-pagination');
+
+    let sliderCount = elSlideWrapper[0].childElementCount;
+    elPaginate.html((statement.index+1) + "/" + sliderCount);
+    statement.on('run', function() {
+        elPaginate.html((statement.index+1) + "/" + sliderCount);
     });
+    
+
+    statement.mount();
 });

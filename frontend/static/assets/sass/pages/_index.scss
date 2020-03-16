@@ -27,6 +27,10 @@
         }
     }
 
+    p {
+        color: $primary-text !important; 
+    }
+
     h3 {
         font-family: $Text-Semibold;
         color: $dark-blue;
@@ -148,5 +152,40 @@
         margin: 0;
         font-size: 0.7rem;
         color: $primary-text;
+    }
+}
+
+.glide {
+    &-wrapper {
+        font-size: 14px;
+        font-style: italic;
+        line-height: 1.43;
+        letter-spacing: -0.42px;
+        color: $primary-text;
+        margin: 10px 0;
+    }
+    &-pagination {
+        position: relative !important;
+        bottom: 0 !important;
+        width: auto !important;
+        font-size: 14px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.14;
+        letter-spacing: -0.42px;
+    }
+    &-thumbs {
+        display: flex;
+        overflow-x: auto;
+        img {
+            opacity: .5;
+            margin-right: 3px;
+        }
+        .glide__bullet--active {
+            opacity: 1;
+            border: 1px solid #02ffb9;
+            border-radius: 6px;
+        }
     }
 }

@@ -78,6 +78,9 @@ $value in $theme-colors {
             font-family: $Text-Bold;
             font-size: $h1;
             color: $dark-blue;
+            &:hover {
+                color: $dark-blue;
+            }
         }
 
         &:hover {

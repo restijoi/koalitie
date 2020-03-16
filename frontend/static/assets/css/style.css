@@ -11338,6 +11338,9 @@ a.link-icon img {
   font-size: 2.25rem;
   color: #151d3e;
 }
+.main-nav a.active:hover {
+  color: #151d3e;
+}
 .main-nav a:hover {
   text-decoration: none !important;
   color: #858a93;
@@ -11444,6 +11447,9 @@ a.link-icon img {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+.profile-info p {
+  color: #858a93 !important;
 }
 .profile-info h3 {
   font-family: "SF-Pro-Text-Semibold";
@@ -11588,6 +11594,39 @@ a.link-icon img {
   margin: 0;
   font-size: 0.7rem;
   color: #858a93;
+}
+
+.glide-wrapper {
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.43;
+  letter-spacing: -0.42px;
+  color: #858a93;
+  margin: 10px 0;
+}
+.glide-pagination {
+  position: relative !important;
+  bottom: 0 !important;
+  width: auto !important;
+  font-size: 14px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: -0.42px;
+}
+.glide-thumbs {
+  display: flex;
+  overflow-x: auto;
+}
+.glide-thumbs img {
+  opacity: 0.5;
+  margin-right: 3px;
+}
+.glide-thumbs .glide__bullet--active {
+  opacity: 1;
+  border: 1px solid #02ffb9;
+  border-radius: 6px;
 }
 
 .project-content-wrapper {

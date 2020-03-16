@@ -5,7 +5,6 @@
 
 {% block extra_css %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'node_modules/swiper/dist/css/swiper.min.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'node_modules/animate.css/animate.min.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'node_modules/ionicons/css/ionicons.min.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'node_modules/bootstrap/dist/css/bootstrap-reboot.min.css' %}">
@@ -15,8 +14,8 @@
 <script type="text/javascript" src="{% static 'node_modules/jquery/dist/jquery.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'node_modules/popper.js/dist/umd/popper.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'node_modules/bootstrap/dist/js/bootstrap.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'node_modules/swiper/dist/js/swiper.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'node_modules/retinajs/dist/retina.js' %}"></script>
+<script type="text/javascript" src="{% static 'node_modules/@glidejs/glide/dist/glide.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 {% block js %}{% endblock %}
 {% endblock %}
@@ -53,20 +52,42 @@
   <div class="section py-2">
     <label class="section-label mb-2">Work & Experiences</label>
     <p>
-      A Designer-Developer in one, I have been working for mobile and web development projects that promotes test driven architecture to produce high quality human-centred experiences for the last four (4) years.
+      A Designer-Developer in one, I have been working for mobile and web development projects that
+       promotes test driven architecture to produce high quality human-centred experiences 
+       for the last four (4) years.
     </p>
   </div>
 
-  <div class="section py-2 swiper-container" id="statement">
-    <div>
-      <label class="section-label mb-2">Client statement</label>
-      <div class="swiper-pagination"></div>
-    </div>
-    <div class="">
-      <img src="{% static 'images/img-1.jpg' %}" data-rjs="3" class="img-rounded">
+  <div class="section py-2">
+    <div class="glide statement">
+      <div class="d-flex justify-content-between">
+        <label class="section-label mb-2">Client statement</label>
+        <div class="glide-pagination"></div>
+      </div>
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides glide-wrapper">
+          <li class="glide__slide">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          </li>
+          <li class="glide__slide">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          </li>
+          <li class="glide__slide">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          </li>
+        </ul>
+      </div>
+      <div class="glide-thumbs" data-glide-el="controls[nav]">
+        <img src="{% static 'images/img-1.jpg' %}" data-rjs="3" class="img-rounded"  data-glide-dir="=0">
+        <img src="{% static 'images/img-1.jpg' %}" data-rjs="3" class="img-rounded"  data-glide-dir="=1">
+        <img src="{% static 'images/img-1.jpg' %}" data-rjs="3" class="img-rounded"  data-glide-dir="=2">
+      </div>
     </div>
   </div>
-  
+
 </aside>
 <section class="main-content-wrapper">
   <nav class="main-nav">
